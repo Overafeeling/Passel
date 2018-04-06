@@ -23,14 +23,16 @@
               <a class="nav-link" href="#">Passel</a>
             </li>
           </ul>
-
+          <div class="">
+          <%= image_tag @user.avatar.url(:medium), :class => "nav-profile" %>
+        </div>
           <div class="btn-group">
             <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= current_user.first_name + " " + current_user.last_name %>
             </button>
             <div class="dropdown-menu">
-              <%= link_to('Edit', edit_user_password_path, :class => "dropdown-item")%></a>
-              <a class="dropdown-item" href="#">Another action</a>
+
+              <a class="dropdown-item" href="http://192.168.112.132:3002/users/edit">Edit account</a>
               <div class="dropdown-divider"></div>
               <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "dropdown-item")%></a>
               <% end %>
